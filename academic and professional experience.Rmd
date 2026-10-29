@@ -4,14 +4,13 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
 
 
 ## Education
-### Columbia University
-#### M.S. in Biostatistics-Public Health Data Science | Sep 2026 – Present
+### Columbia University | Sep 2026 – Present
+#### M.S. in Biostatistics-Public Health Data Science 
 
 ### University of Maryland | Sep 2024 - May 2026
 #### B.S. in Mathematics-Statistics Track, B.S. in Agricultural and Resource Economics

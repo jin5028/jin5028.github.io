@@ -4,7 +4,6 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
 ## Introductory Page
@@ -22,12 +21,12 @@ Thank you for stopping by!
 ![](images/IMG_4613 2.jpeg)
 
 
-## More About Me
+## More About Yiran
 [Yiran's academic and professional experience](academic-and-professional-experience.html)
 
 [Yiran's hobby](hobby.html)
 
-## Links connect with me
+## Links to Connect with Yiran
 * [Yiran's GitHub account](https://github.com/jin5028) 
 * [Yiran's Github website repository](https://github.com/jin5028/yj2991.github.io)
 * [Yiran's email](mailto:yj2991@cumc.columbia.edu)
