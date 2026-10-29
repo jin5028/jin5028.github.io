@@ -1,0 +1,33 @@
+---
+title: "Yiran's Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+## Introductory Page
+Hi, I'm Yiran Jin. I am a first-year biostatistics graduate student interested in data analysis in public health and healthcare research.
+
+My academic interests include public health, epidemiology, and data analysis. I enjoy learning new tools, exploring data, and finding out what the numbers have to say.
+
+Outside of class, I'm always happy to explore new places, try good food, and learn something new.
+
+This website is part of my P8105 coursework, where I'm learning to build a personal website and share a little about myself and my academic journey.
+
+Thank you for stopping by!
+
+#### This is me!
+![](images/IMG_4613 2.jpeg)
+
+
+## More About Me
+[Yiran's academic and professional experience](academic-and-professional-experience.html)
+
+[Yiran's hobby](hobby.html)
+
+## Links connect with me
+* [Yiran's GitHub account](https://github.com/jin5028) 
+* [Yiran's Github website repository](https://github.com/jin5028/yj2991.github.io)
+* [Yiran's email](mailto:yj2991@cumc.columbia.edu)

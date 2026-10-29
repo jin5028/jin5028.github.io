@@ -1,0 +1,56 @@
+---
+title: "My academic and professional experience page"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+
+
+## Education
+### Columbia University
+#### M.S. in Biostatistics-Public Health Data Science | Sep 2026 – Present
+
+### University of Maryland | Sep 2024 - May 2026
+#### B.S. in Mathematics-Statistics Track, B.S. in Agricultural and Resource Economics
+#### GPA: 3.91/4
+
+### China Agricultural University | Sep 2022 - June 2024
+#### Bachelor of Management in Agricultural and Forestry Economics and Management
+#### GPA: 3.92/4
+
+## Research Experience
+### Research Interaction Team — Mathematical Epidemiology (UMD)
+• Analyzed compartmental infectious disease models to investigate transmission dynamics and early epidemic growth.
+
+• Applied mathematical and statistical modeling concepts to evaluate disease dynamics and interpret model assumptions.
+
+• Conducted sensitivity analyses and MATLAB simulations under varying parameter regimes.
+
+• Conducted weekly literature reviews and evaluated epidemiological modeling assumptions and methodological choices.
+
+## Working Experience
+### Yuejie Inc. (Los Angeles)
+#### Data & Operations Analysis Intern
+
+• Cleaned, merged, and reconciled inconsistent freight and inventory datasets to improve data quality and usability.
+
+• Used Excel to analyze operational patterns and identify irregularities in warehouse workflows.
+
+• Supported real-time logistics coordination and observed how data-informed decisions affected daily operations.
+
+• Applied analytical insights to propose process improvements aimed at improving workflow efficiency and reducing delays.
+
+## Technical Skills
+Programming & Data Analysis: R, SQL, MATLAB, Excel
+
+Statistical Methods: Regression Analysis, Multivariate Analysis, Exploratory Data Analysis
+
+Epidemiological Modeling: Compartmental Models, Jacobian-Based Stability Analysis, ODE Simulation, Parameter Sensitivity Analysis
+
+Data Visualization & Reporting: ggplot2, R Markdown
+
+
+
