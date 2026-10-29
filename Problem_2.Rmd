@@ -57,3 +57,39 @@ plot_ly(
     yaxis = list(title = "Year")
   )
 ```
+
+## Seasonal Temperature
+
+```{r}
+plot_ly(
+  data = weather_df |> filter(!is.na(tmax)),
+  x = ~season,
+  y = ~tmax,
+  type = "box",
+  boxpoints = FALSE
+) |>
+  layout(
+    title = "Temperature by Season",
+    xaxis = list(title = "Season"),
+    yaxis = list(title = "Maximum Temperature (°C)")
+  )
+```
+
+## Temperature Relationship
+
+```{r}
+plot_ly(
+  data = weather_df |>
+    filter(!is.na(tmax), !is.na(tmin)) |>
+    slice_sample(n = 500),
+  x = ~tmin,
+  y = ~tmax,
+  type = "scatter",
+  mode = "markers"
+) |>
+  layout(
+    title = "Daily Maximum vs. Minimum Temperature",
+    xaxis = list(title = "Minimum Temperature (°C)"),
+    yaxis = list(title = "Maximum Temperature (°C)")
+  )
+```
