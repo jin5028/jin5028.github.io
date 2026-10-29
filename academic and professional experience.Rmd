@@ -1,5 +1,5 @@
 ---
-title: "My academic and professional experience page"
+title: "My Academic and Professional Experience"
 output: 
   html_document:
     toc: true

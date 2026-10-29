@@ -1,0 +1,59 @@
+---
+title: "HW4_Problem_2"
+author: "Yiran Jin"
+date: "2026-10-29"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+
+data("ny_noaa")
+
+weather_df =
+  ny_noaa |>
+  filter(id == "USW00094728") |>
+  mutate(
+    year = as.integer(substr(date, 1, 4)),
+    month = as.integer(substr(date, 6, 7)),
+    tmax = as.numeric(tmax),
+    tmin = as.numeric(tmin),
+    tmax = if_else(tmax == 9999, NA_real_, tmax) / 10,
+    tmin = if_else(tmin == 9999, NA_real_, tmin) / 10,
+    season = case_when(
+      month %in% c(12, 1, 2) ~ "Winter",
+      month %in% 3:5 ~ "Spring",
+      month %in% 6:8 ~ "Summer",
+      TRUE ~ "Fall"
+    )
+  ) |>
+  filter(year >= 2005, year <= 2010)
+
+monthly_temp =
+  weather_df |>
+  group_by(year, month) |>
+  summarise(
+    avg_tmax = mean(tmax, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  filter(is.finite(avg_tmax))
+```
+
+## Monthly Temperature
+
+```{r}
+plot_ly(
+  data = monthly_temp,
+  x = ~month,
+  y = ~year,
+  z = ~avg_tmax,
+  type = "heatmap"
+) |>
+  layout(
+    title = "Average Maximum Temperature",
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Year")
+  )
+```
