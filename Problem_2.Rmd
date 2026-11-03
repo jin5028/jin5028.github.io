@@ -2,7 +2,10 @@
 title: "HW4_Problem_2"
 author: "Yiran Jin"
 date: "2026-10-29"
-output: github_document
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
