@@ -2,16 +2,13 @@
 title: "HW4_Problem_2"
 author: "Yiran Jin"
 date: "2026-10-29"
-output:
-  flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+output: html_document
 ---
-
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(plotly)
 library(p8105.datasets)
+set.seed(8105)
 
 data("ny_noaa")
 
@@ -30,7 +27,8 @@ weather_df =
       month %in% 3:5 ~ "Spring",
       month %in% 6:8 ~ "Summer",
       TRUE ~ "Fall"
-    )
+    ),
+    season = factor(season, levels = c("Winter", "Spring", "Summer", "Fall"))
   ) |>
   filter(year >= 2005, year <= 2010)
 
@@ -44,55 +42,57 @@ monthly_temp =
   filter(is.finite(avg_tmax))
 ```
 
-## Monthly Temperature
+### Average maximum temperature by month and year
 
-```{r}
+```{r heatmap}
 plot_ly(
   data = monthly_temp,
   x = ~month,
   y = ~year,
   z = ~avg_tmax,
-  type = "heatmap"
+  type = "heatmap",
+  colorbar = list(title = "°C")
 ) |>
   layout(
-    title = "Average Maximum Temperature",
-    xaxis = list(title = "Month"),
-    yaxis = list(title = "Year")
+    xaxis = list(title = "Month", tickmode = "linear", dtick = 1),
+    yaxis = list(title = "Year", tickmode = "linear", dtick = 1)
   )
 ```
 
-## Seasonal Temperature
+### Maximum temperature by season
 
-```{r}
+```{r boxplot}
 plot_ly(
   data = weather_df |> filter(!is.na(tmax)),
   x = ~season,
   y = ~tmax,
+  color = ~season,
   type = "box",
   boxpoints = FALSE
 ) |>
   layout(
-    title = "Temperature by Season",
+    showlegend = FALSE,
     xaxis = list(title = "Season"),
-    yaxis = list(title = "Maximum Temperature (°C)")
+    yaxis = list(title = "Maximum temperature (°C)")
   )
 ```
 
-## Temperature Relationship
+### Daily maximum vs. minimum temperature
 
-```{r}
+```{r scatter}
 plot_ly(
   data = weather_df |>
     filter(!is.na(tmax), !is.na(tmin)) |>
     slice_sample(n = 500),
   x = ~tmin,
   y = ~tmax,
+  color = ~season,
   type = "scatter",
-  mode = "markers"
+  mode = "markers",
+  marker = list(opacity = 0.6)
 ) |>
   layout(
-    title = "Daily Maximum vs. Minimum Temperature",
-    xaxis = list(title = "Minimum Temperature (°C)"),
-    yaxis = list(title = "Maximum Temperature (°C)")
+    xaxis = list(title = "Minimum temperature (°C)"),
+    yaxis = list(title = "Maximum temperature (°C)")
   )
 ```
