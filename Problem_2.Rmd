@@ -45,6 +45,9 @@ monthly_temp =
   filter(is.finite(avg_tmax))
 ```
 
+Column {data-width=650}
+-----------------------------------------------
+
 ### Average maximum temperature by month and year
 
 ```{r heatmap}
@@ -61,6 +64,9 @@ plot_ly(
     yaxis = list(title = "Year", tickmode = "linear", dtick = 1)
   )
 ```
+
+Column {data-width=350}
+-------------------------------------------------------------
 
 ### Maximum temperature by season
 
