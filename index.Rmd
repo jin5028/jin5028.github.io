@@ -31,4 +31,4 @@ Thank you for stopping by!
 * [Yiran's email](mailto:yj2991@cumc.columbia.edu)
 
 ## HW4 Problem 2
-* [problem 2](problem_2.html)
+* [problem 2](Problem_2.html)
